@@ -1,0 +1,114 @@
+// Minimal niri config. Full reference: https://niri-wm.github.io/niri/Configuration:-Introduction
+
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+layout {
+    gaps 12
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 3
+    }
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// Fcitx5 (Vietnamese input) needs these in a niri session.
+environment {
+    XMODIFIERS "@im=fcitx"
+    QT_IM_MODULE "fcitx"
+    GTK_IM_MODULE "fcitx"
+}
+
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    // Apps
+    Mod+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
+
+    // Noctalia IPC calls (launcher, lock screen, volume, ...).
+    // The exact IPC syntax depends on the Noctalia version; check
+    // https://docs.noctalia.dev and uncomment/adapt:
+    // Mod+Space { spawn "noctalia" "ipc" "call" "launcher" "toggle"; }
+    // Mod+Ctrl+L { spawn "noctalia" "ipc" "call" "lockScreen" "toggle"; }
+
+    // Windows and columns
+    Mod+Q { close-window; }
+
+    Mod+Left  { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+
+    Mod+Ctrl+Left  { move-column-left; }
+    Mod+Ctrl+Right { move-column-right; }
+    Mod+Ctrl+Down  { move-window-down; }
+    Mod+Ctrl+Up    { move-window-up; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+
+    // Workspaces
+    Mod+Page_Down      { focus-workspace-down; }
+    Mod+Page_Up        { focus-workspace-up; }
+    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
+    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+
+    // Sizing
+    Mod+R { switch-preset-column-width; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+C { center-column; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    // Screenshots
+    Print     { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print  { screenshot-window; }
+
+    // Session
+    Mod+Shift+E { quit; }
+    Mod+Shift+P { power-off-monitors; }
+}
