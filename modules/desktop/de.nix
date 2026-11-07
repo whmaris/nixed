@@ -12,6 +12,6 @@
   #KDE
   services.desktopManager.plasma6.enable = true;
   # Niri
-  programs.niri.enable = true;
-  environment.etc."niri/config.kdl".source = ./niri/config.kdl;
+  #programs.niri.enable = true;
+  #environment.etc."niri/config.kdl".source = ./niri/config.kdl;
 }

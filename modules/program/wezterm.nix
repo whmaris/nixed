@@ -9,7 +9,7 @@ local config = wezterm.config_builder()
 
 config.color_scheme = "Dracula"
 
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.5
 
 config.font = wezterm.font("Consolas", {
   weight = "Regular",

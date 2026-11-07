@@ -7,7 +7,6 @@
     dropbox
     vscode
     rustdesk-flutter
-    brave
     google-chrome
     vlc
     inkscape
@@ -18,7 +17,6 @@
     nodejs
     pnpm
     filen-desktop
-    neovim
   ];
 
 }

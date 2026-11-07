@@ -15,13 +15,16 @@
   home-manager.users.neo.imports = [
     ./home.nix
     ../../modules/desktop/autostart.nix
-    ../../modules/desktop/noctalia.nix
+    #../../modules/desktop/noctalia.nix
     ../../modules/apps/flatpak.nix
     ../../modules/apps/packages.nix
     ../../modules/program/zed.nix
     ../../modules/program/wezterm.nix
     ../../modules/program/fish.nix
     ../../modules/program/git.nix
+    ../../modules/program/browser.nix
+    ../../modules/program/neovim.nix
+
 
   ];
 }

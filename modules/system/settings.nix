@@ -5,7 +5,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Network and firewall policy. Add publicly reachable service ports here.
+  # Network and firewall policy.
   networking = {
     hostName = "ws";
     networkmanager.enable = true;
@@ -45,7 +45,7 @@
     };
   };
 
-  # Printing, audio, and desktop-service policy
+  # Services
   services = {
     flatpak.enable = true;
     printing.enable = true;
@@ -60,14 +60,9 @@
     power-profiles-daemon.enable = true;
   };
   security.rtkit.enable = true;
-
-  # Nix behavior and generation retention
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 14d";
-  };
+  # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Enable un-free apps
   nixpkgs.config.allowUnfree = true;
 
   # Local login account and privileges
@@ -76,11 +71,13 @@
     description = "Neo";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.fish;
-    packages = [ pkgs.kdePackages.kate ];
   };
-  programs.fish.enable = true;
 
-
+  #Enable Appimage
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
   # Compatibility baseline: change only after reviewing NixOS migration notes.
   system.stateVersion = "26.05";
 }
