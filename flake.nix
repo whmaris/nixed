@@ -15,7 +15,9 @@
     #};
   };
 
-  outputs = { nixpkgs, home-manager, nix-flatpak, noctalia, ... }: {
+  #outputs = { nixpkgs, home-manager, nix-flatpak, noctalia, ... }: {
+  outputs = { nixpkgs, home-manager, nix-flatpak, ... }: {
+
     nixosConfigurations.ws = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 

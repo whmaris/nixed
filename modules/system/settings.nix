@@ -72,6 +72,7 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.fish;
   };
+  programs.fish.enable = true;
 
   #Enable Appimage
   programs.appimage = {
