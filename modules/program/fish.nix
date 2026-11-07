@@ -5,7 +5,7 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/.nixed#ws";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixed#ws";
       ndg = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
       ngc = "sudo nix-collect-garbage";
     };
@@ -16,7 +16,7 @@
     enable = true;
 
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/.nixed#ws";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixed#ws";
       ndg = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
       ngc = "sudo nix-collect-garbage";
     };

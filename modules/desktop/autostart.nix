@@ -6,6 +6,7 @@
     Type=Application
     Name=Crystal Dock
     Exec=crystal-dock
+    OnlyShowIn=KDE;
     X-GNOME-Autostart-enabled=true
   '';
 
