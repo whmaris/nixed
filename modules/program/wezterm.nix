@@ -20,6 +20,7 @@ config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = false
+config.window_decorations = "TITLE | RESIZE"
 
 config.colors = {
   tab_bar = {

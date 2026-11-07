@@ -7,8 +7,7 @@
     ./hardware-configuration.nix
     ../../modules/system/settings.nix
     ../../modules/system/apps.nix
-    ../../modules/desktop/noctalia.nix
-    ../../modules/desktop/plasma.nix
+    ../../modules/desktop/de.nix
   ];
 
   # User-session configuration for neo. Keep user identity host-local; import
@@ -16,6 +15,7 @@
   home-manager.users.neo.imports = [
     ./home.nix
     ../../modules/desktop/autostart.nix
+    ../../modules/desktop/noctalia.nix
     ../../modules/apps/flatpak.nix
     ../../modules/apps/packages.nix
     ../../modules/program/zed.nix

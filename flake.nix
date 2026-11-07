@@ -11,7 +11,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/v0.8.0";
     noctalia = {
       url = "github:noctalia-dev/noctalia";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -22,12 +22,12 @@
       modules = [
         ./hosts/ws
         home-manager.nixosModules.home-manager
-        noctalia.nixosModules.default
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.sharedModules = [
             nix-flatpak.homeManagerModules.nix-flatpak
+            noctalia.homeModules.default
           ];
         }
       ];

@@ -25,5 +25,8 @@
       runAsRoot = true;
     };
   };
-  programs.niri.enable = true;
+  fonts.packages = [
+    (pkgs.cascadia-code)
+  ];
+  fonts.fontconfig.enable = true;
 }

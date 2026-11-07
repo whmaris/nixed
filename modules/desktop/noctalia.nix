@@ -1,11 +1,10 @@
 { ... }:
 
 {
-  # Start Noctalia only in the Niri session; Plasma keeps its own panel.
   programs.noctalia = {
-    enable = true;
-    recommendedServices.enable = true;
-    systemd.enable = true;
-    systemd.target = "niri.service";
+    enable = true;        # cài package
+    systemd.enable = true; # chạy Noctalia như service người dùng
+    settings = ./noctalia/settings.toml;
   };
+  wayland.systemd.target = "niri.service";
 }
