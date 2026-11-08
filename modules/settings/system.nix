@@ -12,7 +12,8 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [
-        80 # HTTP
+        80
+        3000
       ];
     };
   };
@@ -102,7 +103,7 @@
 
   # Cấp phép bộ đệm GTT để iGPU mượn linh hoạt dung lượng RAM hệ thống
   boot.kernelParams = [
-    "amdgpu.gttsize=16384"
+    "amdgpu.gttsize=24576"
   ];
 
   # Compatibility baseline: change only after reviewing NixOS migration notes.
