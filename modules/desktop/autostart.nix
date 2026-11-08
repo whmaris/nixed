@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   xdg.configFile."autostart/crystal-dock.desktop".text = ''
     [Desktop Entry]

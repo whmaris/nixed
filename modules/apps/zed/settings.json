@@ -1,0 +1,79 @@
+{
+  "status_bar": {
+    "active_encoding_button": "enabled"
+  },
+  "terminal": {
+    "shell": "system"
+  },
+  "diagnostics": {
+    "button": false
+  },
+  "proxy": "",
+  "agent": {
+    "dock": "right",
+    "default_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-6-luna",
+      "enable_thinking": true,
+      "effort": "medium"
+    },
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "project_panel": {
+    "bold_folder_labels": false,
+    "folder_indicator": "chevron",
+    "dock": "left"
+  },
+  "window_title_format": "${projectName}${separator}${fileName}",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "auto_install_extensions": {
+    "dockerfile": true,
+    "html": true,
+    "nix": true,
+    "scss": true,
+    "sql": true,
+    "tailwindcss": true,
+    "typescript": true
+  },
+  "autosave": "on_focus_change",
+  "buffer_font_size": 14,
+  "format_on_save": "on",
+  "tab_size": 2,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
+  },
+  "ui_font_size": 14,
+  "vim_mode": false,
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "javascript.updateImportsOnFileMove.enabled": "always"
+      },
+      "enable_lsp_tasks": true
+    },
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore"
+          }
+        }
+      }
+    }
+  }
+}
