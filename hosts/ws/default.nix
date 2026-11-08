@@ -15,7 +15,8 @@
   home-manager.users.neo.imports = [
     ./home.nix
     ../../modules/desktop/autostart.nix
-    #../../modules/desktop/noctalia.nix
+    ../../modules/desktop/noctalia.nix
+    ../../modules/desktop/umbriel.nix
     ../../modules/apps/flatpak.nix
     ../../modules/apps/packages.nix
     ../../modules/program/zed.nix
