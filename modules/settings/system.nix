@@ -79,6 +79,32 @@
     enable = true;
     binfmt = true;
   };
+
+  # hardware for AI
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      # Thư viện tính toán ROCm cho Ollama và AI
+      rocmPackages.clr
+      rocmPackages.clr.icd
+      rocmPackages.rocblas
+      rocmPackages.rocm-runtime
+
+      # Trình điều khiển đồ họa và mã hóa chuẩn (Khuyên dùng RADV tích hợp sẵn trong Mesa)
+      mesa
+      libva
+      libvdpau-va-gl
+    ];
+  };
+
+  # Bật OpenCL để Ollama nhận diện iGPU AMD
+  hardware.amdgpu.opencl.enable = true;
+
+  # Cấp phép bộ đệm GTT để iGPU mượn linh hoạt dung lượng RAM hệ thống
+  boot.kernelParams = [
+    "amdgpu.gttsize=16384"
+  ];
+
   # Compatibility baseline: change only after reviewing NixOS migration notes.
   system.stateVersion = "26.05";
 }
