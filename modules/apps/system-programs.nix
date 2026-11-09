@@ -40,4 +40,16 @@
       OLLAMA_CONTEXT_LENGTH = "16384";
     };
   };
+
+  #Nix-ld
+  programs.nix-ld = {
+    enable = true;
+
+    libraries = with pkgs; [
+      stdenv.cc.cc
+      zlib
+      openssl
+      curl
+    ];
+  };
 }
