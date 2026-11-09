@@ -36,6 +36,8 @@
     environmentVariables = {
       HIP_VISIBLE_DEVICES = "-1";      # tắt ROCm
       GGML_VK_VISIBLE_DEVICES = "0";   # dùng GPU Vulkan đầu tiên
+      OLLAMA_IGPU_ENABLE = "1";   # cho phép dùng GPU tích hợp
+      OLLAMA_CONTEXT_LENGTH = "16384";
     };
   };
 }
