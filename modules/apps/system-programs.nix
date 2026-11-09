@@ -32,6 +32,10 @@
   # OLLAMA
   services.ollama = {
     enable = true;
-    package = pkgs.ollama-rocm;
+    package = pkgs.ollama-vulkan;
+    environmentVariables = {
+      HIP_VISIBLE_DEVICES = "-1";      # tắt ROCm
+      GGML_VK_VISIBLE_DEVICES = "0";   # dùng GPU Vulkan đầu tiên
+    };
   };
 }
